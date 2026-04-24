@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Viagem - Agência</title>
+
+  <!-- Manifesto do PWA -->
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Cor da barra do navegador no celular -->
+  <meta name="theme-color" content="#0077cc">
+
+  <!-- Arquivo de estilos -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+  <img src="Logo fundo transparente.png" alt="Nome da sua agência" class="logo-agencia">
+  <p>Viagens internacionais acompanhadas, com total segurança.</p>
+</header>
+
+  <main class="app-main">
+    <section class="menu">
+      <button onclick="mostrarTela('viagem')" class="menu-btn">Minha Viagem ✈️</button>
+      <button onclick="mostrarTela('contato')" class="menu-btn">Falar com o Fernando ☎️</button>
+      <button onclick="mostrarTela('documentos')" class="menu-btn">Documentos e Vouchers 📄</button>
+      <button onclick="mostrarTela('roteiros')" class="menu-btn">Próximos Roteiros 🌍</button>
+    </section>
+
+    <!-- Tela Minha Viagem -->
+    <section id="tela-viagem" class="tela ativa">
+      <h2>Minha Viagem</h2>
+      <p><strong>Nome da viagem:</strong> Grupo Egito Setembro 2026</p>
+      <p><strong>Datas:</strong> 10 a 20 de setembro de 2026</p>
+
+      <h3>Roteiro dia a dia</h3>
+      <ul>
+        <li><strong>Dia 1:</strong> Chegada ao Cairo, traslado ao hotel, descanso.</li>
+        <li><strong>Dia 2:</strong> Visita às Pirâmides de Gizé e Esfinge.</li>
+        <li><strong>Dia 3:</strong> Voo para Luxor e embarque em cruzeiro no Nilo.</li>
+        <li><strong>Dia 4:</strong> Visitas a templos ao longo do Nilo.</li>
+        <li><strong>...</strong></li>
+      </ul>
+    </section>
+
+    <!-- Tela Contato -->
+    <section id="tela-contato" class="tela">
+      <h2>Falar com o Fernando</h2>
+      <p>Clique no botão abaixo para falar diretamente com seu agente.</p>
+      <a class="whatsapp-btn" href="https://wa.me/5511999999999" target="_blank">
+        Falar no WhatsApp
+      </a>
+      <p>Ou ligue para: <strong>(11) 99999-9999</strong></p>
+    </section>
+
+    <!-- Tela Documentos -->
+    <section id="tela-documentos" class="tela">
+      <h2>Documentos e Vouchers</h2>
+      <p>Aqui você encontra todos os seus documentos importantes.</p>
+      <ul>
+        <li><a href="docs/voucher-hotel.pdf" target="_blank">Voucher do Hotel - Cairo</a></li>
+        <li><a href="docs/voucher-cruzeiro.pdf" target="_blank">Voucher do Cruzeiro no Nilo</a></li>
+        <li><a href="docs/seguro-viagem.pdf" target="_blank">Seguro Viagem</a></li>
+      </ul>
+      <p>Consulte seu agente para garantir que todos os documentos estejam aqui antes da viagem.</p>
+    </section>
+
+    <!-- Tela Próximos Roteiros -->
+    <section id="tela-roteiros" class="tela">
+      <h2>Próximos Roteiros</h2>
+
+      <article class="roteiro-card">
+        <h3>Turquia & Capadócia</h3>
+        <p><strong>Data:</strong> Março 2027</p>
+        <p>Roteiro acompanhado com guia em português, voos internos, hotéis selecionados e suporte total.</p>
+        <a class="whatsapp-btn" href="https://wa.me/5511999999999?text=Tenho%20interesse%20no%20grupo%20Turquia%20Março%202027" target="_blank">
+          Tenho interesse
+        </a>
+      </article>
+
+      <article class="roteiro-card">
+        <h3>Terra Santa (Israel & Jordânia)</h3>
+        <p><strong>Data:</strong> Junho 2027</p>
+        <p>Viagem religiosa com acompanhamento completo, ideal para grupos de igreja e comunidades.</p>
+        <a class="whatsapp-btn" href="https://wa.me/5511999999999?text=Tenho%20interesse%20no%20grupo%20Terra%20Santa%20Junho%202027" target="_blank">
+          Tenho interesse
+        </a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <p>Agência de Viagens - 30 anos de experiência em viagens internacionais acompanhadas.</p>
+  </footer>
+
+  <!-- Arquivo JavaScript -->
+  <script src="app.js"></script>
+
+  <!-- Registro do Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js')
+          .catch((err) => console.log('Erro ao registrar service worker:', err));
+      });
+    }
+  </script>
+</body>
+</html>

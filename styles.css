@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f7fb;    /* fundo azul bem clarinho */
+  color: #333;
+}
+
+/* TOPO (HEADER) - Azul principal */
+.app-header {
+  background-color: #e0e0e0;    /* cinza claro */
+  color: #000000;               /* texto preto */
+  padding: 16px;
+  text-align: center;
+}
+/* LOGO */
+.logo-agencia {
+  max-width: 180px;
+  height: auto;
+  display: block;
+  margin: 0 auto 8px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.app-header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+}
+
+/* ÁREA PRINCIPAL */
+.app-main {
+  padding: 16px;
+}
+
+/* MENU DE BOTÕES */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* Botões principais - borda azul, detalhe verde no hover */
+.menu-btn {
+  flex: 1 1 45%;
+  min-width: 140px;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #999999;    /* borda cinza médio */
+  background-color: #ffffff;
+  color: #333333;               /* texto cinza escuro (quase preto) */
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.menu-btn:hover {
+  background-color: #f0f0f0;    /* cinza claro no hover */
+}
+.menu-btn:hover {
+  background-color: #e8f6ff;    /* azul claro */
+}
+
+/* CAIXAS DE CONTEÚDO (TELAS) */
+.tela {
+  display: none;
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+  border-top: 4px solid #000000;  /* linha preta */
+}
+
+.tela h2 {
+  margin-top: 0;
+  color: #000000;              /* títulos em preto */
+}
+.tela.ativa {
+  display: block;
+}
+
+.tela h2 {
+  margin-top: 0;
+  color: #0057a6;              /* títulos em azul */
+}
+
+/* ROTEIRO, LISTAS */
+.tela ul {
+  padding-left: 18px;
+}
+
+/* RODAPÉ */
+.app-footer {
+  text-align: center;
+  font-size: 12px;
+  padding: 12px;
+  color: #555;
+}
+
+/* BOTÕES WHATSAPP - Verde */
+.whatsapp-btn {
+  display: inline-block;
+  margin: 8px 0;
+  padding: 10px 14px;
+  background-color: #25D366;   /* verde padrão WhatsApp */
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.whatsapp-btn:hover {
+  background-color: #1da955;
+}
+
+/* CARDS DE ROTEIROS FUTUROS */
+.roteiro-card {
+  background-color: #fdfdfd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+}
+
+.roteiro-card h3 {
+  margin-top: 0;
+  color: #000000;   /* preto */
+}
