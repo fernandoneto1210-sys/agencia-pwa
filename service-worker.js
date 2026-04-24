@@ -5,7 +5,7 @@ const ARQUIVOS_PARA_CACHE = [
   './styles.css',
   './app.js',
   './manifest.webmanifest'
-  // Você pode adicionar mais arquivos aqui, se quiser
+  // Adicione aqui outros arquivos que queira cachear
 ];
 
 self.addEventListener('install', (event) => {
@@ -16,7 +16,6 @@ self.addEventListener('install', (event) => {
 });
 
 self.addEventListener('activate', (event) => {
-  // Aqui você pode limpar caches antigos se mudar o nome do cache
   event.waitUntil(self.clients.claim());
 });
 
@@ -24,7 +23,6 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
       .then((respostaCache) => {
-        // Se existir no cache, devolve o cache; senão, busca na rede
         return respostaCache || fetch(event.request);
       })
   );
