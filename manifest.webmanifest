@@ -1,6 +1,6 @@
 {
-  "name": "Minha Viagem - Agência",
-  "short_name": "Minha Viagem",
+  "name": "Oficina de Turismo - Minha Viagem",
+  "short_name": "Oficina Viagem",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
