@@ -1,0 +1,20 @@
+{
+  "name": "Check List de Viagem - Oficina de Turismo",
+  "short_name": "Checklist Viagem",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2c8c3a",
+  "icons": [
+    {
+      "src": "logo-oficina.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo-oficina.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
