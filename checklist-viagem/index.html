@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check List de Viagem - Oficina de Turismo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="brand-header">
+                <div class="logo-area">
+                    <!-- Ajuste o nome do arquivo da logo conforme você salvar na pasta -->
+                    <img src="logo-oficina.png" alt="Oficina de Turismo - Sua Viagem Começa Aqui">
+                </div>
+                <div class="brand-text">
+                    <h1>Check List de Viagem</h1>
+                    <p class="subtitle">Oficina de Turismo • Sua viagem começa aqui!</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <p><strong>Oficina de Turismo</strong></p>
+                <p>Av. D. Pedro II, Lj 03 - Centro - 37470-000 • São Lourenço - MG</p>
+                <p>Tel / WhatsApp: (35) 98862-2943 • (35) 98844-5517</p>
+                <p>Instagram: <strong>@oficinadeturismo</strong> • Site: <strong>www.oficinatur.com.br</strong></p>
+            </div>
+        </header>
+
+        <!-- Informações da Viagem -->
+        <section class="trip-info">
+            <h2>📍 Informações da Viagem</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <label>Destino:</label>
+                    <input type="text" id="destino" placeholder="Ex: Inglaterra & Escócia">
+                </div>
+                <div class="info-item">
+                    <label>Tipo de Viagem:</label>
+                    <select id="tipoViagem">
+                        <option value="">Selecione...</option>
+                        <option value="Nacional">Nacional</option>
+                        <option value="Internacional">Internacional</option>
+                        <option value="Grupo Oficina de Turismo">Grupo Oficina de Turismo</option>
+                    </select>
+                </div>
+                <div class="info-item">
+                    <label>Data de Ida:</label>
+                    <input type="date" id="dataIda">
+                </div>
+                <div class="info-item">
+                    <label>Data de Volta:</label>
+                    <input type="date" id="dataVolta">
+                </div>
+                <div class="info-item">
+                    <label>Viajantes:</label>
+                    <input type="text" id="viajantes" placeholder="Nome(s) do(s) passageiro(s)">
+                </div>
+                <div class="info-item">
+                    <label>Clima Esperado:</label>
+                    <select id="clima">
+                        <option value="">Selecione...</option>
+                        <option value="Quente / Verão">Quente / Verão</option>
+                        <option value="Frio / Inverno">Frio / Inverno</option>
+                        <option value="Misto">Misto</option>
+                    </select>
+                </div>
+                <div class="info-item">
+                    <label>Consultor(a) Oficina de Turismo:</label>
+                    <input type="text" id="consultor" placeholder="Nome de quem atendeu o cliente">
+                </div>
+                <div class="info-item info-full">
+                    <label>Observações Importantes (Oficina de Turismo):</label>
+                    <textarea id="observacoes" rows="3" placeholder="Ex.: Horário de encontro no aeroporto, limite de bagagem, lembretes etc."></textarea>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dica para o Cliente -->
+        <section class="trip-hint">
+            <p>
+                ✨ Use este checklist para preparar sua viagem com tranquilidade. 
+                Marque os itens que já organizou, gere o PDF e leve impresso ou no celular.
+                Itens em branco podem ser marcados à caneta durante a viagem.
+            </p>
+        </section>
+
+        <!-- Abas de Categorias -->
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab(event, 'preparativos')">📋 Preparativos</button>
+            <button class="tab-button" onclick="showTab(event, 'documentos')">📄 Documentos</button>
+            <button class="tab-button" onclick="showTab(event, 'malasMao')">🎒 Mala de Mão</button>
+            <button class="tab-button" onclick="showTab(event, 'roupas')">👕 Roupas</button>
+            <button class="tab-button" onclick="showTab(event, 'higiene')">🧴 Higiene</button>
+            <button class="tab-button" onclick="showTab(event, 'eletronicos')">🔌 Eletrônicos</button>
+            <button class="tab-button" onclick="showTab(event, 'farmacia')">💊 Farmácia</button>
+            <button class="tab-button" onclick="showTab(event, 'extras')">➕ Extras</button>
+        </div>
+
+        <!-- Conteúdo das Abas -->
+        <div id="preparativos" class="tab-content active">
+            <h2>📋 Preparativos Antes da Viagem</h2>
+            <div class="checklist-section">
+                <div class="item">
+                    <input type="checkbox" id="prep1">
+                    <label for="prep1">Confirmar validade do passaporte (mínimo 6 meses)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep2">
+                    <label for="prep2">Verificar necessidade de visto</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep3">
+                    <label for="prep3">Contratar seguro viagem</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep4">
+                    <label for="prep4">Fazer check-in online</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep5">
+                    <label for="prep5">Conferir voos e horários</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep6">
+                    <label for="prep6">Reservar hotel/hospedagem</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep7">
+                    <label for="prep7">Reservar passeios / ingressos antecipados</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep8">
+                    <label for="prep8">Trocar moeda / providenciar dinheiro</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep9">
+                    <label for="prep9">Liberar cartão para uso internacional</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep10">
+                    <label for="prep10">Salvar contatos da Oficina de Turismo e seguradora</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep11">
+                    <label for="prep11">Organizar transfers / deslocamentos</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="prep12">
+                    <label for="prep12">Contratar chip internacional / roaming</label>
+                </div>
+                <div class="add-item-container">
+                    <input type="text" class="custom-input" placeholder="Adicionar item personalizado...">
+                    <button onclick="addCustomItem('preparativos')">+ Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="documentos" class="tab-content">
+            <h2>📄 Documentos Essenciais</h2>
+            <div class="checklist-section">
+                <div class="item">
+                    <input type="checkbox" id="doc1">
+                    <label for="doc1">Passaporte (original + cópia)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc2">
+                    <label for="doc2">RG / CNH (viagens nacionais)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc3">
+                    <label for="doc3">Cartão de embarque (impresso ou digital)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc4">
+                    <label for="doc4">Voucher de hotel / pacote Oficina de Turismo</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc5">
+                    <label for="doc5">Comprovante de seguro viagem</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc6">
+                    <label for="doc6">Carteira de vacinação (quando exigido)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc7">
+                    <label for="doc7">Cartões de crédito / débito</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc8">
+                    <label for="doc8">Dinheiro em espécie (moeda local)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc9">
+                    <label for="doc9">Carteira de motorista (nacional e/ou internacional)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="doc10">
+                    <label for="doc10">Cópias digitalizadas (e-mail / nuvem)</label>
+                </div>
+                <div class="add-item-container">
+                    <input type="text" class="custom-input" placeholder="Adicionar documento...">
+                    <button onclick="addCustomItem('documentos')">+ Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="malasMao" class="tab-content">
+            <h2>🎒 Mala de Mão</h2>
+            <div class="checklist-section">
+                <div class="item">
+                    <input type="checkbox" id="mao1">
+                    <label for="mao1">Documentos essenciais</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao2">
+                    <label for="mao2">Carteira com dinheiro e cartões</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao3">
+                    <label for="mao3">Celular + carregador</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao4">
+                    <label for="mao4">Fone de ouvido</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao5">
+                    <label for="mao5">Óculos de sol / óculos de grau</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao6">
+                    <label for="mao6">Almofada de pescoço / máscara de dormir</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao7">
+                    <label for="mao7">Snacks / barras de cereal</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao8">
+                    <label for="mao8">Garrafa de água vazia</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao9">
+                    <label for="mao9">Troca de roupa (emergência)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao10">
+                    <label for="mao10">Kit higiene básico (escova, pasta, lenços)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="mao11">
+                    <label for="mao11">Remédios de uso imediato</label>
+                </div>
+                <div class="add-item-container">
+                    <input type="text" class="custom-input" placeholder="Adicionar item...">
+                    <button onclick="addCustomItem('malasMao')">+ Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="roupas" class="tab-content">
+            <h2>👕 Roupas e Calçados</h2>
+            <div class="checklist-section">
+                <h3>Roupas Básicas</h3>
+                <div class="item">
+                    <input type="checkbox" id="roupa1">
+                    <label for="roupa1">Camisetas / camisas (conforme dias de viagem)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa2">
+                    <label for="roupa2">Calças / bermudas / saias</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa3">
+                    <label for="roupa3">Roupas íntimas</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa4">
+                    <label for="roupa4">Meias</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa5">
+                    <label for="roupa5">Pijama</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa6">
+                    <label for="roupa6">Roupa de banho</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa7">
+                    <label for="roupa7">Roupa mais arrumada (jantar / eventos)</label>
+                </div>
+
+                <h3>Clima Frio</h3>
+                <div class="item">
+                    <input type="checkbox" id="roupa8">
+                    <label for="roupa8">Casaco / jaqueta</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa9">
+                    <label for="roupa9">Blusa de frio / suéter</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa10">
+                    <label for="roupa10">Touca / gorro</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa11">
+                    <label for="roupa11">Luvas</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="roupa12">
+                    <label for="roupa12">Cachecol</label>
+                </div>
+
+                <h3>Calçados</h3>
+                <div class="item">
+                    <input type="checkbox" id="calc1">
+                    <label for="calc1">Tênis confortável para caminhar</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="calc2">
+                    <label for="calc2">Chinelos / sandálias</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="calc3">
+                    <label for="calc3">Sapato social (se necessário)</label>
+                </div>
+
+                <div class="add-item-container">
+                    <input type="text" class="custom-input" placeholder="Adicionar roupa/calçado...">
+                    <button onclick="addCustomItem('roupas')">+ Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="higiene" class="tab-content">
+            <h2>🧴 Higiene e Cosméticos</h2>
+            <div class="checklist-section">
+                <div class="item">
+                    <input type="checkbox" id="hig1">
+                    <label for="hig1">Escova de dente + pasta</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig2">
+                    <label for="hig2">Shampoo e condicionador</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig3">
+                    <label for="hig3">Sabonete</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig4">
+                    <label for="hig4">Desodorante</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig5">
+                    <label for="hig5">Protetor solar</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig6">
+                    <label for="hig6">Hidratante corporal</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig7">
+                    <label for="hig7">Protetor labial</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig8">
+                    <label for="hig8">Perfume / colônia</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig9">
+                    <label for="hig9">Escova / pente de cabelo</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig10">
+                    <label for="hig10">Itens pessoais (maquiagem, barba, etc.)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig11">
+                    <label for="hig11">Lâmina / aparelho de barbear</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig12">
+                    <label for="hig12">Absorventes / itens femininos</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig13">
+                    <label for="hig13">Lenços de papel / lenços umedecidos</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig14">
+                    <label for="hig14">Toalha de rosto / banho (se necessário)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="hig15">
+                    <label for="hig15">Cortador de unhas / lixa</label>
+                </div>
+                <div class="add-item-container">
+                    <input type="text" class="custom-input" placeholder="Adicionar item de higiene...">
+                    <button onclick="addCustomItem('higiene')">+ Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="eletronicos" class="tab-content">
+            <h2>🔌 Eletrônicos e Acessórios</h2>
+            <div class="checklist-section">
+                <div class="item">
+                    <input type="checkbox" id="elet1">
+                    <label for="elet1">Celular</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet2">
+                    <label for="elet2">Carregador de celular</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet3">
+                    <label for="elet3">Power bank (bateria portátil)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet4">
+                    <label for="elet4">Adaptador universal de tomada</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet5">
+                    <label for="elet5">Câmera fotográfica</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet6">
+                    <label for="elet6">Carregador / bateria extra da câmera</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet7">
+                    <label for="elet7">Notebook / tablet</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet8">
+                    <label for="elet8">Carregador do notebook / tablet</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet9">
+                    <label for="elet9">Fone de ouvido / headset</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet10">
+                    <label for="elet10">Cabos extras (USB, HDMI, etc.)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet11">
+                    <label for="elet11">Pen drive / HD externo</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="elet12">
+                    <label for="elet12">Relógio / smartwatch + carregador</label>
+                </div>
+                <div class="add-item-container">
+                    <input type="text" class="custom-input" placeholder="Adicionar eletrônico...">
+                    <button onclick="addCustomItem('eletronicos')">+ Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="farmacia" class="tab-content">
+            <h2>💊 Farmácia e Saúde</h2>
+            <div class="checklist-section">
+                <div class="item">
+                    <input type="checkbox" id="farm1">
+                    <label for="farm1">Remédios de uso contínuo</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm2">
+                    <label for="farm2">Receitas médicas</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm3">
+                    <label for="farm3">Analgésico (dor de cabeça)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm4">
+                    <label for="farm4">Antitérmico (febre)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm5">
+                    <label for="farm5">Remédio para enjoo</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm6">
+                    <label for="farm6">Remédio para diarreia</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm7">
+                    <label for="farm7">Antiácido</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm8">
+                    <label for="farm8">Band-aid / curativos</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm9">
+                    <label for="farm9">Pomada para dor muscular / pancadas</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm10">
+                    <label for="farm10">Repelente de insetos</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm11">
+                    <label for="farm11">Álcool em gel</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="farm12">
+                    <label for="farm12">Termômetro</label>
+                </div>
+                <div class="add-item-container">
+                    <input type="text" class="custom-input" placeholder="Adicionar medicamento...">
+                    <button onclick="addCustomItem('farmacia')">+ Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="extras" class="tab-content">
+            <h2>➕ Itens Extras</h2>
+            <div class="checklist-section">
+                <div class="item">
+                    <input type="checkbox" id="extra1">
+                    <label for="extra1">Guarda-chuva / capa de chuva</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra2">
+                    <label for="extra2">Mochila pequena para passeios</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra3">
+                    <label for="extra3">Sacolas para roupa suja</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra4">
+                    <label for="extra4">Cadeado para mala</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra5">
+                    <label for="extra5">Identificador de bagagem</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra6">
+                    <label for="extra6">Organizadores de mala (sacos / cubos)</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra7">
+                    <label for="extra7">Balança portátil de mala</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra8">
+                    <label for="extra8">Necessaire</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra9">
+                    <label for="extra9">Livro / guia de viagem</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra10">
+                    <label for="extra10">Garrafa térmica</label>
+                </div>
+                <div class="item">
+                    <input type="checkbox" id="extra11">
+                    <label for="extra11">Lanterna pequena</label>
+                </div>
+                <div class="add-item-container">
+                    <input type="text" class="custom-input" placeholder="Adicionar item extra...">
+                    <button onclick="addCustomItem('extras')">+ Adicionar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botões de Ação -->
+        <div class="action-buttons">
+            <button class="btn-primary" onclick="saveProgress()">💾 Salvar Progresso</button>
+            <button class="btn-secondary" onclick="loadProgress()">📂 Carregar Progresso</button>
+            <button class="btn-success" onclick="generatePDF()">📄 Gerar PDF</button>
+            <button class="btn-danger" onclick="resetAll()">🔄 Limpar Tudo</button>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="stats">
+            <div class="stat-item">
+                <span class="stat-label">Itens Marcados</span>
+                <span class="stat-value" id="checkedCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Total de Itens</span>
+                <span class="stat-value" id="totalCount">0</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-label">Progresso</span>
+                <span class="stat-value" id="progress">0%</span>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 Oficina de Turismo • 30 anos transformando sonhos em realidade • Viagens em grupo com acompanhamento desde São Lourenço/MG</p>
+        </footer>
+    </div>
+
+    <!-- Biblioteca para gerar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c8c3a 0%, #1e4a7d 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+/* CABEÇALHO / MARCA */
+
+header {
+    background: linear-gradient(135deg, #2c8c3a 0%, #1e4a7d 100%);
+    color: white;
+    padding: 30px 40px 25px;
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo-area img {
+    width: 90px;
+    height: auto;
+    border-radius: 20px;
+    background: white;
+    padding: 6px;
+}
+
+.brand-text h1 {
+    font-size: 2.1em;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1em;
+    opacity: 0.9;
+}
+
+/* BLOCO DE CONTATO */
+
+.contact-info {
+    margin-top: 15px;
+    font-size: 0.9em;
+    line-height: 1.4;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+/* INFORMAÇÕES DA VIAGEM */
+
+.trip-info {
+    padding: 30px;
+    background: #f8f9fa;
+    border-bottom: 3px solid #2c8c3a;
+}
+
+.trip-info h2 {
+    color: #2c8c3a;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.info-item label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.info-item input,
+.info-item select,
+.info-item textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.info-item input:focus,
+.info-item select:focus,
+.info-item textarea:focus {
+    outline: none;
+    border-color: #2c8c3a;
+}
+
+.info-item.info-full {
+    grid-column: 1 / -1;
+}
+
+.info-item textarea {
+    resize: vertical;
+    min-height: 60px;
+}
+
+/* DICA PARA O CLIENTE */
+
+.trip-hint {
+    padding: 15px 30px;
+    background: #fffbea;
+    font-size: 0.95em;
+    color: #555;
+    border-bottom: 2px solid #ffd700;
+}
+
+.trip-hint p {
+    border-left: 4px solid #2c8c3a;
+    padding-left: 15px;
+    line-height: 1.6;
+}
+
+/* ABAS */
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    background: #f8f9fa;
+    padding: 10px 20px 0;
+    gap: 5px;
+}
+
+.tab-button {
+    padding: 10px 18px;
+    border: none;
+    background: white;
+    cursor: pointer;
+    border-radius: 10px 10px 0 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: all 0.3s;
+    color: #555;
+}
+
+.tab-button:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.tab-button.active {
+    background: #2c8c3a;
+    color: white;
+}
+
+/* CONTEÚDO DAS ABAS */
+
+.tab-content {
+    display: none;
+    padding: 30px;
+    animation: fadeIn 0.3s;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-content h2 {
+    color: #2c8c3a;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+}
+
+.tab-content h3 {
+    color: #1e4a7d;
+    margin: 25px 0 15px;
+    font-size: 1.2em;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+/* ITENS */
+
+.checklist-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    transition: all 0.3s;
+    border-left: 4px solid transparent;
+}
+
+.item:hover {
+    background: #e9ecef;
+    border-left-color: #2c8c3a;
+    transform: translateX(3px);
+}
+
+.item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: #2c8c3a;
+}
+
+.item label {
+    flex: 1;
+    cursor: pointer;
+    font-size: 1em;
+    color: #333;
+}
+
+.item input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* ADICIONAR ITEM */
+
+.add-item-container {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 12px 15px;
+    background: #fff7d1;
+    border-radius: 10px;
+    border: 1px dashed #ffca2c;
+}
+
+.custom-input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #ffca2c;
+    border-radius: 8px;
+    font-size: 1em;
+}
+
+.add-item-container button {
+    padding: 10px 22px;
+    background: #ffca2c;
+    color: #333;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-item-container button:hover {
+    background: #ffb300;
+    transform: scale(1.03);
+}
+
+/* BOTÕES DE AÇÃO */
+
+.action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 25px 30px 30px;
+    justify-content: center;
+    background: #f8f9fa;
+}
+
+.action-buttons button {
+    padding: 12px 26px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.btn-primary {
+    background: #1e4a7d;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #16385e;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-success {
+    background: #2c8c3a;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #23692f;
+    transform: translateY(-2px);
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+}
+
+/* ESTATÍSTICAS */
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 30px 25px;
+    background: linear-gradient(135deg, #2c8c3a 0%, #1e4a7d 100%);
+    color: white;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+/* RODAPÉ */
+
+footer {
+    text-align: center;
+    padding: 15px 20px 20px;
+    background: #f8f9fa;
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    .brand-header {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .logo-area img {
+        width: 70px;
+    }
+
+    .brand-text h1 {
+        font-size: 1.6em;
+    }
+
+    .tabs {
+        padding: 10px;
+    }
+
+    .tab-button {
+        font-size: 0.8em;
+        padding: 8px 10px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-buttons button {
+        width: 100%;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
