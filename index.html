@@ -22,16 +22,19 @@
     <p>Viagens internacionais acompanhadas, com total segurança.</p>
   </header>
 
-  <main class="app-main">
-    <section class="menu">
-      <button onclick="mostrarTela('viagem')" class="menu-btn">Minha Viagem ✈️</button>
-      <button onclick="mostrarTela('contato')" class="menu-btn">Falar com Agência ☎️</button>
-      <button onclick="mostrarTela('documentos')" class="menu-btn">Documentos e Vouchers 📄</button>
-      <button onclick="mostrarTela('roteiros')" class="menu-btn">Próximos Roteiros 🌍</button>
-      <button onclick="window.open('https://fernandoneto1210-sys.github.io/checklist-viagem-oficina/', '_blank')">
-  🧳 Check List de Viagem
-</button>
-    </section>
+  <section class="menu">
+  <button onclick="mostrarTela('viagem')" class="menu-btn">Minha Viagem ✈️</button>
+  <button onclick="mostrarTela('contato')" class="menu-btn">Falar com Agência ☎️</button>
+  <button onclick="mostrarTela('documentos')" class="menu-btn">Documentos e Vouchers 📄</button>
+  <button onclick="mostrarTela('roteiros')" class="menu-btn">Próximos Roteiros 🌍</button>
+
+  <button
+    onclick="window.open('https://fernandoneto1210-sys.github.io/checklist-viagem-oficina/', '_blank')"
+    class="menu-btn menu-btn-checklist"
+  >
+    🧳 Check List de Viagem
+  </button>
+</section>
 
     <!-- Minha Viagem -->
     <section id="tela-viagem" class="tela ativa">
